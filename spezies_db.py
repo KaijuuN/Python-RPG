@@ -14,8 +14,8 @@ spezies = {
         "mut": -1,
         "körperkraft": -1
     },
-    "Übliche Kulturen": {"Achaz-Rha", "Ctki’Ssrr", "Stammesachaz"},
-    "Automatischer Vorteile": {"Dunkelsicht I", "Zusätzliche Gliedmaße (Schwanz)"},
+    "Übliche Kulturen": ["Achaz-Rha", "Ctki’Ssrr", "Stammesachaz"],
+    "Automatischer Vorteile": ["Dunkelsicht I", "Zusätzliche Gliedmaße (Schwanz)"],
     "Automatischer Nachteil": {"Kältestarre": -15},
     },
     "ELFEN":
