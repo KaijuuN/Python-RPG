@@ -102,22 +102,18 @@ class Character:
     def set_geschwindigkeit(self):
         self.set_attribute("geschwindigkeit", self.geschwindigkeit_grundwert)
 
+    def set_ini_basiswert(self):
+        self.set_attribute("ini_basiswert", 0, self.mut * 2, self.intuition, self.gewandtheit, divisor=5)
 
-    def set_ini_basiswert(self, mut, intuition, gewandtheit):
-        value = (mut * 2 + intuition + gewandtheit) / 5
-        setattr(self, "ini_basiswert", value)
+    def set_at_basiswert(self):
+        self.set_attribute("at_basiswert", 0, self.mut, self.gewandtheit, self.körperkraft, divisor=5)
+    
+    def set_pa_basiswert(self):
+        self.set_attribute("pa_basiswert", 0, self.intuition, self.gewandtheit, self.körperkraft, divisor=5)
 
-    def set_at_basiswert(self, mut, gewandtheit, körperkraft):
-        value = (mut + gewandtheit + körperkraft) / 5
-        setattr(self, "at_basiswert", value)
+    def set_fk_basiswert(self):
+        self.set_attribute("fk_basiswert", 0, self.intuition, self.fingerfertigkeit, self.körperkraft, divisor=5)
 
-    def set_pa_basiswert(self, intuition, gewandtheit, körperkraft):
-        value = (intuition + gewandtheit + körperkraft) / 5
-        setattr(self, "pa_basiswert", value)
-
-    def set_fk_basiswert(self, intuition, fingerfertigkeit, körperkraft):
-        value = (intuition + fingerfertigkeit + körperkraft) / 5
-        setattr(self, "fk_basiswert", value)
 
     def set_spezies_data(self, spezies_name:str,spezies_kultur_idx:int):
         spezies_data = spezies_db.spezies[spezies_name]
@@ -147,10 +143,10 @@ class Character:
         self.set_magieresistenz()
         self.set_astralenergie()
         # self.set_karmaenergie() # TODO or maybe not XD
-        self.set_ini_basiswert(self.mut, self.intuition, self.gewandtheit)
-        self.set_at_basiswert(self.mut, self.gewandtheit, self.körperkraft)
-        self.set_pa_basiswert(self.intuition, self.gewandtheit, self.körperkraft)
-        self.set_fk_basiswert(self.intuition, self.fingerfertigkeit, self.körperkraft)
+        self.set_ini_basiswert()
+        self.set_at_basiswert()
+        self.set_pa_basiswert()
+        self.set_fk_basiswert()
 
 
 
